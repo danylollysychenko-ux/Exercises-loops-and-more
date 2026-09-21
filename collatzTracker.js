@@ -1,10 +1,16 @@
 let number = prompt("Enter a positive number: ");
 let largestValue = 0;
+let valid = false;
 
-while (number < 0 || number === null || number === "") {
-  let number = prompt("Invalid. Enter a positive number: ");
+while (!valid) {
+  if (number > 0 && number !== null && number !== "") {
+    break;
+  } else {
+    number = prompt("Invalid. Enter a positive number: ");
+  }
 }
 
+number = Number(number);
 console.log(`You entered ${number}.`);
 while (true) {
   if (number % 2 == 0) {
