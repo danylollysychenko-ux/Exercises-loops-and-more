@@ -1,21 +1,26 @@
-let number ="";
-let numEntered;
+let number = prompt("Enter a positive number: ");
+let largestValue = 0;
 
-while (number < 0){
-    number = prompt("Enter a positive number");
-    if (number > 0){
-        break;
-    }
+while (number < 0 || number === null || number === "") {
+  let number = prompt("Invalid. Enter a positive number: ");
 }
 
-// while (number < 0) {
-//   number = prompt("Enter a positive number");
-//   if (number < 0) {
-//     let numEntered = number;
-//   }
-// }
+console.log(`You entered ${number}.`);
+while (true) {
+  if (number % 2 == 0) {
+    number = number / 2;
+    console.log(number);
+  } else if (number % 2 == 1) {
+    number = number * 3 + 1;
+    console.log(number);
+  }
+  if (number > largestValue) {
+    largestValue = number;
+  }
 
-// console.log(numEntered);
-// for (let i = 0; i < 50; i++) {
-//   console.log(i);
-// }
+  if (number == 1) {
+    break;
+  }
+}
+
+console.log(`Largest value reached ${largestValue}.`);
